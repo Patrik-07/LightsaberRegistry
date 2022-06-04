@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #2b124e">
+<head>
+    <meta charset="UTF-8">
+    <title>jediEdit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/head.css">
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
+</head>
+<body>
+    <div class="wrapper bg3">
+        <header>
+            <h1>Fill the fields below</h1>
+            <a href="index.html" id="signOut"></a>
+        </header>
+        <main>
+            <div>
+                <form class="w-75" action="jediView.html">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="text" class="form-control" id="age" placeholder="Enter age">
+                    </div>
+                    <div class="form-group">
+                        <label for="mCount">Midichlorian count</label>
+                        <input type="text" class="form-control" id="mCount" placeholder="Enter midichlorian count">
+                    </div>
+                </form>
+            </div>
+            <div class="navButtons">
+                <a href="jediView.html" class="btn btn-outline-light" id="back">Back</a>
+                <a href="jediView.html" class="btn btn-outline-light" id="createNewItem">Save Jedi</a>
+            </div>
+        </main>
+        <footer>
+            <p class="copyrightLeft">Copyright © 2021-present Patrik Santa</p>
+            <p class="copyrightRight">All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+form {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+    top: 160px;
+    left: 12%;
+    width: 75%;
+}
+
+form label {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.navButtons {
+    top: 480px;
+}
+
+datalist {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
+
+.limit {
+    font-weight: bolder;
+}
+
+.submitBlock {
+    display: flex;
+    margin-top: 20px;
+}

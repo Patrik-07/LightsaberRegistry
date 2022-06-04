@@ -1,0 +1,59 @@
+<%- include('header') -%>
+<html lang="en" style="background-color: #1c1d19">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/head.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <title>jediView</title>
+</head>
+<body>
+<div class="wrapper bg2">
+    <header>
+        <h1>Jedi Knights</h1>
+        <a href="/logout" id="logOut"></a>
+    </header>
+    <main>
+        <div>
+            <div class="tableShadow top tableBrown"></div>
+            <div class="scrollbar">
+                <table class="table table-dark table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Midichlorian count</th>
+                        <th scope="col" id="actions"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i=0; i < jedis.length; i++) { %>
+                        <tr>
+                            <th scope="row"><%= i+1 %></th>
+                            <td><%= jedis[i].name %></td>
+                            <td><%= jedis[i].age %></td>
+                            <td><%= jedis[i].midichlorianCount %></td>
+                            <td class="actionButtons">
+                                <a href="/lightsaber/<%= jedis[i]._id %>" class="abtn"><img class="abtnImg" src="../img/read.png" alt="read"></a>
+                                <a href="/jedi/edit/<%= jedis[i]._id %>" class="abtn"><img class="abtnImg" src="../img/update.png" alt="edit"></a>
+                                <a href="/jedi/del/<%= jedis[i]._id %>" class="abtn"><img class="abtnImg" src="../img/delete.png" alt="delete"></a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tableShadow bot tableBrown"></div>
+        </div>
+        <div class="navButtons">
+            <a href="/jedi/new" class="btn btn-outline-light" id="createNewItem">Add new Jedi</a>
+        </div>
+    </main>
+    <footer>
+        <p class="copyrightLeft">Copyright © 2021-present Patrik Santa</p>
+        <p class="copyrightRight">All rights reserved.</p>
+    </footer>
+</div>
+<%- include('footer') -%>

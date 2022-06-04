@@ -1,0 +1,58 @@
+<%- include('header') -%>
+<html lang="en" style="background-color: #1c1d19">
+<head>
+    <meta charset="UTF-8">
+    <title>lightsaberView</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/head.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+</head>
+<body>
+<div class="wrapper bg2">
+    <header>
+        <h1><%= jedi.name %>'s lightsabers</h1>
+        <a href="/logout" id="logOut"></a>
+    </header>
+    <main>
+        <div>
+            <div class="tableShadow top"></div>
+            <div class="scrollbar">
+                <table class="table table-dark table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Hilt</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Length (cm)</th>
+                        <th scope="col" id="actions"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for (var i=0; i < lightsabers.length; i++) { %>
+                        <tr>
+                            <th scope="row"><%= i+1 %></th>
+                            <td><%= lightsabers[i].hilt %></td>
+                            <td><%= lightsabers[i].color %></td>
+                            <td><%= lightsabers[i].length %></td>
+                            <td class="actionButtons">
+                                <a href="/lightsaber/<%= jedi._id %>/del/<%= lightsabers[i]._id %>" class="abtn"><img class="abtnImg" src="../img/delete.png" alt="delete"></a>
+                            </td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tableShadow bot"></div>
+        </div>
+        <div class="navButtons">
+            <a href="/jedi" class="btn btn-outline-light" id="back">Back</a>
+            <a href="/lightsaber/<%= jedi._id %>/new" class="btn btn-outline-light" id="createNewItem">Add new Lightsaber</a>
+        </div>
+    </main>
+    <footer>
+        <p class="copyrightLeft">Copyright © 2021-present Patrik Santa</p>
+        <p class="copyrightRight">All rights reserved.</p>
+    </footer>
+</div>
+<%- include('footer') -%>

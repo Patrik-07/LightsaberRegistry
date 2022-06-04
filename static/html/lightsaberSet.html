@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #2b124e">
+<head>
+    <meta charset="UTF-8">
+    <title>lightsaberEdit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/head.css">
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
+</head>
+<body>
+<div class="wrapper bg3">
+    <header>
+        <h1>Fill the fields below</h1>
+        <a href="index.html" id="signOut"></a>
+    </header>
+    <main>
+        <div>
+            <form class="w-75" action="jediView.html">
+                <div class="form-group">
+                    <label for="hilt">Hilt type</label>
+                    <select class="form-control" id="hilt">
+                        <option value="" selected disabled hidden>Choose hilt type</option>
+                        <option>Standard</option>
+                        <option>Electrum</option>
+                        <option>Curve-Hilted</option>
+                        <option>Tonfa-Style</option>
+                        <option>Wrist Hilt</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="color">Color</label>
+                    <input type="text" class="form-control" id="color" placeholder="Enter color">
+                </div>
+                <div class="form-group">
+                    <label for="length" class="form-label">Length (cm)</label>
+                    <input type="range" class="form-range" min="20" max="200" list="tickmarks" id="length">
+
+                    <datalist id="tickmarks">
+                        <option label="20" class="limit"></option>
+                        <option label="30"></option>
+                        <option label="40"></option>
+                        <option label="50"></option>
+                        <option label="60"></option>
+                        <option label="70"></option>
+                        <option label="80"></option>
+                        <option label="90"></option>
+                        <option label="100"></option>
+                        <option label="110"></option>
+                        <option label="120"></option>
+                        <option label="130"></option>
+                        <option label="140"></option>
+                        <option label="150"></option>
+                        <option label="160"></option>
+                        <option label="170"></option>
+                        <option label="180"></option>
+                        <option label="190"></option>
+                        <option label="200" class="limit"></option>
+                    </datalist>
+                </div>
+            </form>
+        </div>
+        <div class="navButtons">
+            <a href="lightsaberView.html" class="btn btn-outline-light" id="back">Back</a>
+            <a href="lightsaberView.html" class="btn btn-outline-light" id="createNewItem">Save Lightsaber</a>
+        </div>
+    </main>
+    <footer>
+        <p class="copyrightLeft">Copyright © 2021-present Patrik Santa</p>
+        <p class="copyrightRight">All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

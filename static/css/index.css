@@ -1,0 +1,54 @@
+#login {
+    position: relative;
+    margin: 0 auto;
+
+    height: 100%;
+    width: 500px;
+
+    text-align: center;
+    box-shadow: 0 4px 20px 20px #000000;
+}
+
+h1 {
+    position: absolute;
+    top: 100px;
+
+    font-family: starwars, serif;
+    font-size: 50px;
+    color: white;
+    line-height: 80px;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+h5 {
+    letter-spacing: 1px;
+    color: white
+}
+
+form {
+    position: absolute;
+    top: 320px;
+    left: 60px;
+}
+
+::placeholder {
+    font-family: starwars, serif;
+    letter-spacing: 3px;
+    text-align: center;
+    color: gray;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px 2px rgba(255, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    font-family: starwars, serif;
+    letter-spacing: 3px;
+}
+
+button {
+    font-family: starwars, serif;
+    letter-spacing: 3px;
+}

@@ -1,0 +1,74 @@
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+
+    height: 100%;
+
+    background-color: black;
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        width: 1920px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 1080px;
+    width: 100%;
+}
+
+.bg1 {
+    background: url('../img/indexBG.png') no-repeat center;
+}
+
+.bg2 {
+    background: url('../img/tableBG.png') no-repeat center;
+}
+
+.bg3 {
+    background: url('../img/editBG.png') no-repeat center;
+}
+
+@font-face {
+    font-family: starwars;
+    src: url(../font/Starjedi.ttf);
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 40px;
+    left: 20px;
+}
+
+footer p {
+    color: white;
+    margin: 0 auto;
+}
+
+.copyrightLeft {
+    display: inline-block;
+    float: left;
+}
+
+.copyrightRight {
+    display: inline-block;
+    float: right;
+    padding-right: 40px;
+}
+
+.navButtons {
+    position: absolute;
+    right: 13%;
+}

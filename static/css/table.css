@@ -1,0 +1,79 @@
+html {
+    background-color: #1c1d19;
+}
+
+.scrollbar {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+    top: 160px;
+    left: 12%;
+    width: 75%;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: gray;
+}
+
+table {
+    text-align: center;
+}
+
+table tbody {
+    opacity: 60%;
+}
+
+td {
+    line-height: 15px;
+}
+
+.tableShadow {
+    position: absolute;
+    left: 12%;
+
+    width: 75%;
+    box-shadow: 0 30px 15px 50px #161712;
+    background-color: #161712;
+}
+
+.top {
+    z-index: 1;
+    top: 550px;
+}
+
+.bot {
+    z-index: 0;
+    top: 88px;
+}
+
+#actions {
+    width: 20%;
+}
+
+.actionButtons {
+    text-align: center;
+    border-left: gray solid 1px;
+}
+
+.abtn {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: transparent;
+}
+
+.abtnImg {
+    width: 30px;
+    height: 30px;
+}
+
+.navButtons {
+    top: 580px;
+    z-index: 1;
+}

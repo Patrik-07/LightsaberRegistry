@@ -1,0 +1,96 @@
+#Jedi and lightsaber
+- index.html - login form
+- jediView.html - Jedi list (view, edit, delete), new Jedi button
+- JediSet.html - edit, save
+- lightsaberView.html - Lightsaber list (delete), new Lightsaber button
+- lightsaberSet.html - edit, save
+
+#Middlewares
+middlewares/common/
+    renderMW.js
+
+middlewares/auth/
+    authMW.js
+    checkPassMW.js
+    handleWrongPassMW.js
+
+middlewares/jedi/
+    getJedisMW.js
+    getJediMW.js
+    saveJediMW.js
+    delJediMW.js
+
+middlewares/lightsaber/
+    getLightSabersMW.js
+    getLightsaberMW.js
+    saveLightsaberMW.js
+    delLightsaberMW.js
+
+#Routing
+GET /?error=wrongpass
+    handleWrongPassMW                 - Lekezeli a rossz jelszót.
+    renderMW(index.html)              - Megjeleníti az index.html-t.
+
+POST /login
+   checkPassMW                        - Megnézi, hogy van-e beérkezett postparaméter,
+                                        ha igen, akkor ha egyezik a jelszóval akkor
+                                        login session-el, amúgy átirányítja a usert.
+
+GET /jedi
+    authMW                            - Ellenőrzi, hogy a user be van-e jelentkezve.
+                                        Ha be van, next, ha nincs akkor átirányítja
+                                        a /?error endpointra.
+    getJedisMW                        - Lekérdezi az adatbázisból a jedi lovagokat.
+    renderMW(jediView.html)           - Megjeleníti az jediView.html-t.
+
+GET, POST /jedi/new
+    authMW
+    saveJediMW                        - Ha nincs postparaméterben elküldve a jedikhez tartozó adat,
+                                        akkor next hívás, amúgy, ha van akkor megpróbálja elmenteni.
+                                        Hiba esetén, állapot mentése változokba, majd next.
+                                        Sikeres mentéskor pedig átirányít a /jedi oldalra.
+    renderMW(jediSet.html (new))      - Megjeleníti az jediSet.html-t.
+                                        Ha volt érték beküldve, a form elemek azokkal lesznek feltöltve.
+
+GET, POST /jedi/edit/:jediID
+    authMW
+    getJediMW                         - Postparaméterben levő ID segítségével kéri le
+                                        az adatbázisban levő adatokat,
+                                        ezeket egy objectbe (res.locals) mentjük,
+                                        majd ezt kirendereljük.
+    saveJediMW                        - Ha már van betöltve/mentve (res.locals) Jedi
+                                        akkor ezt mentjük, a betöltött adatokkal.
+    renderMW(jediSet.html (edit))     - Megjeleníti az jediSet.html-t.
+                                        Ha volt érték beküldve, a form elemek azokkal lesznek feltöltve.
+
+GET /jedi/del/:jediID
+    authMW
+    getJediMW
+    delJediMW                         - Törli a jedit, majd átirányítja a usert a /jedi oldalra.
+
+GET /lightsaber/:jediID
+    authMW
+    getJediMW
+    getLightSabersMW                  - Lekérdezi az adatbázisból a fénykardokat.
+    renderMW                          - Megjeleníti az lightsaberView.html-t.
+
+GET, POST /lightsaber/:jediID/new
+    authMW
+    getJediMW
+    getLightsaberMW                   - Hasonlóan működik, mint a getJediMW,
+                                        csak egy másik postparaméterrel, változóval.
+                                        Tehát postparaméterben levő ID segítségével kéri le
+                                        az adatbázisban levő adatokat,
+                                        ezeket egy objectbe (res.locals) mentjük,
+                                        majd ezt kirendereljük.
+    saveLightsaberMW                  - Hasonlóan működik, mint a saveJediMW.
+                                        Ha nincs postparaméterben elküldve a lightsaberhez tartozó adat,
+                                        akkor next hívás, amúgy, ha van akkor megpróbálja elmenteni.
+                                        Hiba esetén, állapot mentése változokba, majd next.
+                                        Sikeres mentéskor pedig átirányít a /lightsaber/:jediID oldalra.
+    renderMW(lightsaberSet (new))     - Megjeleníti az lightsaberSet.html-t.
+
+GET /lightsaber/:jediID/del:/lightsaberID
+    authMW
+    getLightsaberMW
+    delLightsaberMW                   - Törli a fénykardot, majd átirányítja a usert a /lightsaber:jediID oldalra.

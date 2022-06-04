@@ -1,0 +1,44 @@
+header {
+    position: absolute;
+    top: 40px;
+    left: 12%;
+
+    width: 75%;
+    z-index: 1;
+}
+
+header div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline-block;
+    vertical-align: middle;
+
+    z-index: 1;
+    font-family: starwars, serif;
+    font-size: 50px;
+    color: white;
+    line-height: 80px;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+header p {
+    display: inline-block;
+    color: white;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+#logOut {
+    display: inline-block;
+    float: right;
+    margin-top: 30px;
+    background: url('../img/logout.png') no-repeat;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+    border: transparent;
+}
