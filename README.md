@@ -8,3 +8,4 @@ Here, you can see the main, login page:
 ## Description
 
 This project is an Express/Node.js based web app, where the user can store informations about lightsabers (e.g., length, color).
+For database I used MongoDB.
